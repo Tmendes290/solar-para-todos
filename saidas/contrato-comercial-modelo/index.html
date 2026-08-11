@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato Comercial — Solar Para Todos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:   #0d2156;
+    --orange: #f0a818;
+    --white:  #ffffff;
+    --off:    #f7f7f5;
+    --text:   #1a1a1a;
+    --muted:  #666;
+    --border: #e5e5e0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background: var(--off);
+  }
+
+  /* ── AVISO DE USO (não aparece impresso) ── */
+  .aviso-uso {
+    background: #fff8e6;
+    border-bottom: 2px solid var(--orange);
+    padding: 14px 5%;
+    font-size: 13px;
+    color: #7a5b00;
+    text-align: center;
+  }
+
+  .aviso-uso strong { color: #4a3800; }
+
+  @media print {
+    .aviso-uso { display: none; }
+  }
+
+  /* ── CAPA ── */
+  .capa {
+    background: linear-gradient(135deg, var(--navy) 0%, #17337c 60%, var(--navy) 100%);
+    color: #fff;
+    padding: 64px 8% 56px;
+  }
+
+  .capa-topo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  .capa-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--orange);
+  }
+
+  .capa-marca {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .capa-titulo-pre {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  .capa-titulo {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+  }
+
+  .capa-tabela {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .capa-linha {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .capa-linha:last-child { border-bottom: none; }
+
+  .capa-label {
+    width: 220px;
+    flex-shrink: 0;
+    padding: 16px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba(0,0,0,0.15);
+  }
+
+  .capa-valor {
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .capa-empresa {
+    margin-top: 32px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* ── PÁGINA ── */
+  .pagina {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  .secao {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 52px;
+    margin-top: 28px;
+  }
+
+  .secao-num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  .secao-titulo {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .secao-texto {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .secao-texto + .secao-texto { margin-top: 14px; }
+
+  /* ── TABELAS DE DADOS ── */
+  .tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tabela-dados tr { border-bottom: 1px solid var(--border); }
+  .tabela-dados tr:last-child { border-bottom: none; }
+
+  .tabela-dados td {
+    padding: 14px 4px;
+    font-size: 14.5px;
+  }
+
+  .tabela-dados td:first-child {
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .tabela-dados td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ── EQUIPAMENTOS ── */
+  .equip-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .equip-item:last-child { border-bottom: none; }
+
+  .equip-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .equip-detalhe {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .equip-qtd {
+    display: inline-block;
+    margin-top: 8px;
+    background: var(--off);
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ── INVESTIMENTO ── */
+  .inv-box {
+    background: var(--off);
+    border-left: 4px solid var(--orange);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-top: 8px;
+  }
+
+  .inv-valor {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+
+  .inv-parcelamento {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* ── LISTA CHECK ── */
+  .lista-check {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 32px;
+  }
+
+  .lista-check li {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+  }
+
+  .lista-check li::before {
+    content: '✓';
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--orange);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .obs-box {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--off);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── GARANTIAS ── */
+  .garantias-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .garantia-card {
+    background: var(--off);
+    border-radius: 12px;
+    padding: 22px 20px;
+    text-align: center;
+  }
+
+  .garantia-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+
+  .garantia-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+
+  /* ── CLÁUSULAS ── */
+  .clausula {
+    margin-top: 26px;
+  }
+
+  .clausula:first-child { margin-top: 0; }
+
+  .clausula-titulo {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .clausula-texto {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .clausula-texto + .clausula-texto { margin-top: 10px; }
+
+  /* ── ASSINATURAS ── */
+  .assinaturas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+  }
+
+  .assinatura-linha {
+    border-top: 1px solid var(--text);
+    padding-top: 10px;
+  }
+
+  .assinatura-nome {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .assinatura-cargo {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .local-data {
+    margin-top: 40px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* ── PLACEHOLDER ── */
+  .ph { color: var(--navy); }
+
+  /* ── RODAPÉ ── */
+  .rodape {
+    text-align: center;
+    padding: 28px 40px;
+    font-size: 12px;
+    color: rgba(0,0,0,0.35);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .capa { padding: 40px 6% 40px; }
+    .pagina { padding: 0 20px 60px; }
+    .secao { padding: 32px 26px; }
+    .capa-label { width: 150px; font-size: 11.5px; }
+    .lista-check { grid-template-columns: 1fr; }
+    .garantias-grid { grid-template-columns: 1fr; }
+    .assinaturas { grid-template-columns: 1fr; gap: 56px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .secao { break-inside: avoid; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="aviso-uso">
+  <strong>Modelo reutilizável</strong> — antes de enviar pro cliente, substitua todos os campos entre colchetes [assim] pelos dados reais. Sugestão de revisão jurídica antes do primeiro uso oficial.
+</div>
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="capa-topo">
+    <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="Solar Para Todos" class="capa-logo">
+    <span class="capa-marca">Solar Para Todos</span>
+  </div>
+
+  <div class="capa-titulo-pre">Contrato de prestação de serviços</div>
+  <h1 class="capa-titulo">Instalação de sistema<br>de energia solar<br>fotovoltaica</h1>
+
+  <div class="capa-tabela">
+    <div class="capa-linha">
+      <div class="capa-label">Cliente</div>
+      <div class="capa-valor ph">[Nome completo do cliente]</div>
+    </div>
+    <div class="capa-linha">
+      <div class="capa-label">CPF / CNPJ</div>
+      <div class="capa-valor ph">[000.000.000-00]</div>
+    </div>
+    <div class="capa-linha">
+      <div class="capa-label">Contato</div>
+      <div class="capa-valor ph">[Telefone] · [E-mail]</div>
+    </div>
+    <div class="capa-linha">
+      <div class="capa-label">Endereço da instalação</div>
+      <div class="capa-valor ph">[Endereço completo]</div>
+    </div>
+    <div class="capa-linha">
+      <div class="capa-label">Potência do projeto</div>
+      <div class="capa-valor ph">[X kWh/mês]</div>
+    </div>
+    <div class="capa-linha">
+      <div class="capa-label">Data</div>
+      <div class="capa-valor ph">[DD/MM/AAAA]</div>
+    </div>
+  </div>
+
+  <div class="capa-empresa">
+    Solar Para Todos Ltda · CNPJ 53.611.892/0001-23<br>
+    Av. G, Qd. 49, Lt. 03 — Cidade Jardim, Parauapebas/PA<br>
+    (94) 99908-5671 (Parauapebas) · (94) 99200-2939 (Canaã dos Carajás)<br>
+    @solarparatodosparauapebas
+  </div>
+</div>
+
+<div class="pagina">
+
+  <!-- 01 SOBRE -->
+  <div class="secao">
+    <div class="secao-num">01 · Quem está por trás</div>
+    <h2 class="secao-titulo">Solar Para Todos</h2>
+    <p class="secao-texto">A Solar Para Todos tem duas unidades físicas no Pará — Parauapebas e Canaã dos Carajás — e atende residências e negócios que querem parar de pagar caro na conta de luz. Cada projeto é dimensionado especificamente pro consumo do cliente, do levantamento técnico até a instalação e a homologação junto à concessionária.</p>
+    <p class="secao-texto">Este documento formaliza a proposta comercial e as condições da prestação do serviço descrito abaixo.</p>
+  </div>
+
+  <!-- 02 PROJETO -->
+  <div class="secao">
+    <div class="secao-num">02 · Detalhes do projeto</div>
+    <h2 class="secao-titulo">Dimensionamento técnico</h2>
+    <table class="tabela-dados">
+      <tr><td>Localidade da usina</td><td class="ph">[Cidade/PA]</td></tr>
+      <tr><td>Irradiação solar diária média anual</td><td class="ph">[XXX kWh/m²]</td></tr>
+      <tr><td>Potência do sistema dimensionado</td><td class="ph">[X,XX kWp]</td></tr>
+      <tr><td>Geração média mensal estimada</td><td class="ph">[X.XXX kWh]</td></tr>
+      <tr><td>Área útil necessária (estimada)</td><td class="ph">[XX m²]</td></tr>
+    </table>
+  </div>
+
+  <!-- 03 EQUIPAMENTOS -->
+  <div class="secao">
+    <div class="secao-num">03 · Equipamentos</div>
+    <h2 class="secao-titulo">O que vai ser instalado</h2>
+
+    <div class="equip-item">
+      <div class="equip-nome">Módulos fotovoltaicos</div>
+      <div class="equip-detalhe ph">[Modelo, potência unitária e fabricante]</div>
+      <div class="equip-qtd ph">[Qtde] unidades</div>
+    </div>
+
+    <div class="equip-item">
+      <div class="equip-nome">Inversor</div>
+      <div class="equip-detalhe ph">[Modelo, potência e fabricante]</div>
+      <div class="equip-qtd ph">[Qtde] unidade(s)</div>
+    </div>
+
+    <div class="equip-item">
+      <div class="equip-nome">Estrutura de fixação</div>
+      <div class="equip-detalhe ph">[Tipo de telhado/estrutura]</div>
+    </div>
+  </div>
+
+  <!-- 04 INVESTIMENTO -->
+  <div class="secao">
+    <div class="secao-num">04 · Investimento</div>
+    <h2 class="secao-titulo">Valor do projeto</h2>
+    <div class="inv-box">
+      <div class="inv-valor ph">R$ [XX.XXX,XX]</div>
+      <div class="inv-parcelamento ph">ou em até [XX]x de R$ [XXX,XX]</div>
+    </div>
+  </div>
+
+  <!-- 05 SERVIÇOS -->
+  <div class="secao">
+    <div class="secao-num">05 · Escopo do serviço</div>
+    <h2 class="secao-titulo">O que está incluso</h2>
+    <ul class="lista-check">
+      <li>Vistoria técnica</li>
+      <li>Projeto elétrico</li>
+      <li>Anotação de Responsabilidade Técnica (ART)</li>
+      <li>Obtenção de licenças junto à concessionária</li>
+      <li>Montagem dos módulos com estrutura apropriada</li>
+      <li>Instalação e montagem elétrica do sistema</li>
+      <li>Gestão e fiscalização da obra</li>
+      <li>Frete incluso</li>
+      <li>Documentação personalizada do projeto</li>
+      <li>Monitoramento e manutenção preventiva</li>
+    </ul>
+    <div class="obs-box">
+      <strong>Não estão inclusos:</strong> obras civis, reformas no telhado/laje ou no padrão de entrada, aluguel de máquinas e equipamentos, aterramento da residência. A fiação elétrica inclusa na proposta cobre até 30 metros — trechos adicionais são orçados à parte.
+    </div>
+  </div>
+
+  <!-- 06 GARANTIAS -->
+  <div class="secao">
+    <div class="secao-num">06 · Garantias</div>
+    <h2 class="secao-titulo">O que cobre o serviço</h2>
+    <div class="garantias-grid">
+      <div class="garantia-card">
+        <div class="garantia-num">2 anos</div>
+        <div class="garantia-label">Garantia da instalação e mão de obra</div>
+      </div>
+      <div class="garantia-card">
+        <div class="garantia-num">30 anos</div>
+        <div class="garantia-label">Geração e eficiência dos módulos, conforme fabricante</div>
+      </div>
+      <div class="garantia-card">
+        <div class="garantia-num">60 dias</div>
+        <div class="garantia-label">Prazo estimado de entrega com o sistema gerando</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 CLÁUSULAS -->
+  <div class="secao">
+    <div class="secao-num">07 · Termos contratuais</div>
+    <h2 class="secao-titulo">Condições da prestação de serviço</h2>
+
+    <div class="clausula">
+      <div class="clausula-titulo">1. Do objeto</div>
+      <p class="clausula-texto">A CONTRATADA (Solar Para Todos Ltda, CNPJ 53.611.892/0001-23) presta ao CONTRATANTE serviço de dimensionamento, fornecimento e instalação de sistema de energia solar fotovoltaica, conforme especificações técnicas descritas nas seções 02 e 03 deste documento.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">2. Do valor e forma de pagamento</div>
+      <p class="clausula-texto">O valor total do serviço é o descrito na seção 04. O pagamento poderá ser feito à vista ou parcelado, conforme condição acordada e registrada neste documento. Em caso de atraso, incidem juros de mora de 1% ao mês e multa de 2% sobre o valor da parcela em atraso, sem prejuízo da correção monetária.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">3. Do prazo de execução</div>
+      <p class="clausula-texto">O prazo estimado para entrega do sistema instalado e gerando é de <strong>60 dias corridos</strong>, contados a partir da confirmação do pagamento (ou da primeira parcela) e da liberação de acesso ao local de instalação pelo CONTRATANTE. O prazo pode ser prorrogado por motivos alheios à CONTRATADA, como atraso na vistoria/homologação pela concessionária de energia, condições climáticas ou caso fortuito/força maior — casos em que o CONTRATANTE será comunicado com a nova estimativa.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">4. Das obrigações da CONTRATADA</div>
+      <p class="clausula-texto">Executar o serviço descrito na seção 05, com os equipamentos especificados na seção 03, dentro das normas técnicas aplicáveis, e providenciar a documentação necessária para a homologação do sistema junto à concessionária de energia local.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">5. Das obrigações do CONTRATANTE</div>
+      <p class="clausula-texto">Fornecer acesso ao local de instalação nas datas combinadas, garantir que a estrutura do telhado/laje esteja em condições adequadas para receber os módulos (reformas estruturais não estão inclusas neste contrato) e manter a unidade consumidora regularizada junto à concessionária de energia.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">6. Da garantia</div>
+      <p class="clausula-texto">Aplicam-se os prazos de garantia descritos na seção 06. A garantia de instalação não cobre danos decorrentes de mau uso, alterações realizadas por terceiros não autorizados, ou eventos de força maior (raios, quedas de energia da rede, fenômenos climáticos extremos).</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">7. Do cancelamento</div>
+      <p class="clausula-texto">O CONTRATANTE pode desistir da contratação em até 7 (sete) dias corridos após a assinatura, com devolução integral dos valores pagos, conforme o Código de Defesa do Consumidor (art. 49). Após esse prazo, em caso de cancelamento por parte do CONTRATANTE já com equipamentos adquiridos ou serviço iniciado, será descontado o custo dos equipamentos já comprados e da mão de obra já executada.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">8. Da proteção de dados (LGPD)</div>
+      <p class="clausula-texto">Os dados pessoais do CONTRATANTE coletados neste contrato (nome, CPF, contato, endereço) são utilizados exclusivamente para a execução deste serviço e para os trâmites de homologação junto à concessionária de energia, não sendo compartilhados com terceiros para outras finalidades.</p>
+    </div>
+
+    <div class="clausula">
+      <div class="clausula-titulo">9. Do foro</div>
+      <p class="clausula-texto">Fica eleito o foro da comarca de Parauapebas/PA para dirimir quaisquer dúvidas ou controvérsias oriundas deste contrato, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+    </div>
+  </div>
+
+  <!-- 08 ASSINATURAS -->
+  <div class="secao">
+    <div class="secao-num">08 · Aceite</div>
+    <h2 class="secao-titulo">Assinaturas</h2>
+    <p class="secao-texto">E por estarem de acordo, as partes assinam o presente instrumento em duas vias de igual teor.</p>
+
+    <div class="local-data ph">[Parauapebas/PA], [DD] de [mês] de [AAAA]</div>
+
+    <div class="assinaturas">
+      <div>
+        <div class="assinatura-linha">
+          <div class="assinatura-nome">Solar Para Todos Ltda</div>
+          <div class="assinatura-cargo">CNPJ 53.611.892/0001-23 — Contratada</div>
+        </div>
+      </div>
+      <div>
+        <div class="assinatura-linha">
+          <div class="assinatura-nome ph">[Nome do cliente]</div>
+          <div class="assinatura-cargo ph">CPF [000.000.000-00] — Contratante</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="rodape">
+  Solar Para Todos · Modelo de contrato comercial
+</div>
+
+</body>
+</html>

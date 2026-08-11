@@ -10,6 +10,10 @@ const alvos = [
     html: '../saidas/proposta-fechamento-solar-para-todos/index.html',
     pdf: '../saidas/proposta-fechamento-solar-para-todos/proposta-fechamento-solar-para-todos.pdf',
   },
+  {
+    html: '../saidas/contrato-comercial-modelo/index.html',
+    pdf: '../saidas/contrato-comercial-modelo/contrato-comercial-modelo.pdf',
+  },
 ];
 
 (async () => {
