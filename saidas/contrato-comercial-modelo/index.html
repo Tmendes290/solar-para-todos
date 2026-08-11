@@ -41,6 +41,11 @@
     .aviso-uso { display: none; }
   }
 
+  /* espaço extra no fim da página pra barra flutuante não cobrir conteúdo */
+  @media screen {
+    body { padding-bottom: 70px; }
+  }
+
   /* ── CAPA ── */
   .capa {
     background: linear-gradient(135deg, var(--navy) 0%, #17337c 60%, var(--navy) 100%);
@@ -365,8 +370,70 @@
     color: var(--muted);
   }
 
-  /* ── PLACEHOLDER ── */
-  .ph { color: var(--navy); }
+  /* ── PLACEHOLDER (editável) ── */
+  .ph {
+    color: var(--navy);
+    border-radius: 4px;
+    outline: none;
+    transition: background .15s, box-shadow .15s;
+  }
+
+  .ph:hover { background: rgba(240,168,24,0.12); }
+
+  .ph:focus {
+    background: rgba(240,168,24,0.16);
+    box-shadow: 0 0 0 2px var(--orange);
+  }
+
+  /* campo que ainda tem [colchete] sem preencher */
+  .ph.pendente {
+    background: rgba(240,24,24,0.06);
+    box-shadow: 0 0 0 1px rgba(220,50,50,0.35);
+  }
+
+  @media print {
+    .ph:hover, .ph:focus { background: none; box-shadow: none; }
+    .ph.pendente { background: none; box-shadow: none; }
+  }
+
+  /* ── BARRA DE FERRAMENTAS (não aparece impressa) ── */
+  .toolbar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background: var(--navy);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 100px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .toolbar-texto { color: rgba(255,255,255,0.75); }
+  .toolbar-pendentes { color: var(--orange); font-weight: 700; }
+
+  .toolbar-btn {
+    background: var(--orange);
+    color: var(--navy);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 10px 22px;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+
+  .toolbar-btn:hover { opacity: 0.9; }
+
+  @media print {
+    .toolbar { display: none; }
+  }
 
   /* ── RODAPÉ ── */
   .rodape {
@@ -397,7 +464,7 @@
 <body>
 
 <div class="aviso-uso">
-  <strong>Modelo reutilizável</strong> — antes de enviar pro cliente, substitua todos os campos entre colchetes [assim] pelos dados reais. Sugestão de revisão jurídica antes do primeiro uso oficial.
+  <strong>Modelo reutilizável</strong> — clique em cima de qualquer campo em destaque [assim] e digite o dado real do cliente. Sugestão de revisão jurídica antes do primeiro uso oficial.
 </div>
 
 <!-- CAPA -->
@@ -622,6 +689,45 @@
 <div class="rodape">
   Solar Para Todos · Modelo de contrato comercial
 </div>
+
+<div class="toolbar">
+  <span class="toolbar-texto">📝 Clique nos campos em destaque pra editar</span>
+  <span class="toolbar-pendentes" id="contador-pendentes"></span>
+  <button class="toolbar-btn" onclick="window.print()">Baixar PDF</button>
+</div>
+
+<script>
+  const campos = document.querySelectorAll('.ph');
+
+  function marcarPendentes() {
+    let pendentes = 0;
+    campos.forEach(el => {
+      const temColchete = el.textContent.includes('[');
+      el.classList.toggle('pendente', temColchete);
+      if (temColchete) pendentes++;
+    });
+    const contador = document.getElementById('contador-pendentes');
+    contador.textContent = pendentes > 0 ? `${pendentes} campo(s) por preencher` : 'Tudo preenchido ✓';
+  }
+
+  campos.forEach((el, i) => {
+    el.setAttribute('contenteditable', 'true');
+    el.setAttribute('tabindex', i + 1);
+
+    el.addEventListener('focus', () => {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    });
+
+    el.addEventListener('blur', marcarPendentes);
+    el.addEventListener('input', marcarPendentes);
+  });
+
+  marcarPendentes();
+</script>
 
 </body>
 </html>
