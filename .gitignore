@@ -17,6 +17,12 @@ Thumbs.db
 # Dependências
 node_modules/
 
+# package.json na raiz é só ferramenta local (Playwright pra gerar PDF).
+# Não pode ir pro repo: o Railway detecta esse arquivo na raiz e tenta
+# buildar como app Node em vez de servir o site como estático.
+/package.json
+/package-lock.json
+
 # Arquivos temporários
 *.log
 *.tmp
