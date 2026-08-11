@@ -13,6 +13,10 @@ const alvos = [
   {
     html: '../saidas/contrato-comercial-modelo/index.html',
     pdf: '../saidas/contrato-comercial-modelo/contrato-comercial-modelo.pdf',
+    // este arquivo define @page (A4, 12mm) no próprio CSS -- usa a
+    // mesma medida que o navegador do usuário usa no "Imprimir",
+    // em vez da largura customizada dos outros dois documentos
+    preferCSSPageSize: true,
   },
 ];
 
@@ -24,12 +28,17 @@ const alvos = [
     const htmlPath = 'file://' + path.resolve(__dirname, alvo.html);
     await page.goto(htmlPath, { waitUntil: 'networkidle' });
     const pdfPath = path.resolve(__dirname, alvo.pdf);
-    await page.pdf({
-      path: pdfPath,
-      width: '900px',
-      printBackground: true,
-      margin: { top: '0px', bottom: '0px', left: '0px', right: '0px' },
-    });
+
+    if (alvo.preferCSSPageSize) {
+      await page.pdf({ path: pdfPath, printBackground: true, preferCSSPageSize: true });
+    } else {
+      await page.pdf({
+        path: pdfPath,
+        width: '900px',
+        printBackground: true,
+        margin: { top: '0px', bottom: '0px', left: '0px', right: '0px' },
+      });
+    }
     console.log(`Gerado: ${alvo.pdf}`);
     await page.close();
   }

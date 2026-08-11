@@ -7,6 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
   *, *::before, *::after {
     margin: 0; padding: 0; box-sizing: border-box;
     -webkit-print-color-adjust: exact;
@@ -461,6 +466,11 @@
   @media print {
     body { background: #fff; }
     .secao { break-inside: avoid; box-shadow: none; }
+
+    /* usa a largura real da página A4 (sem a margem de leitura de tela
+       de 860px) pra não depender do navegador escalar o conteúdo */
+    .pagina { max-width: 100%; padding-left: 0; padding-right: 0; }
+    .secao { padding: 24px 28px; }
 
     /* seção 07 (termos contratuais) é grande demais pra caber numa
        página só — libera ela pra quebrar, mas cada cláusula individual
