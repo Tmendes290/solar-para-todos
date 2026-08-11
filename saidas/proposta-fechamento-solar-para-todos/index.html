@@ -7,6 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
     *, *::before, *::after {
       margin: 0; padding: 0; box-sizing: border-box;
       -webkit-print-color-adjust: exact;
@@ -405,6 +410,23 @@
       .inv-grid { grid-template-columns: 1fr; }
       .passos { grid-template-columns: 1fr; }
       .cta-box { padding: 36px 28px; }
+    }
+
+    /* ── IMPRESSÃO ── */
+    @media print {
+      body { background: #fff; }
+      .pagina { max-width: 100%; padding-left: 0; padding-right: 0; padding-bottom: 12px; }
+      .secao, .cta-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        padding: 28px 30px;
+      }
+      .resumo-item, .inv-card, .passo {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .rodape { padding: 10px 40px; }
     }
   </style>
 </head>
