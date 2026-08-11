@@ -461,6 +461,31 @@
   @media print {
     body { background: #fff; }
     .secao { break-inside: avoid; box-shadow: none; }
+
+    /* seção 07 (termos contratuais) é grande demais pra caber numa
+       página só — libera ela pra quebrar, mas cada cláusula individual
+       continua protegida (quebra só ENTRE cláusulas, nunca no meio) */
+    .secao-longa { break-inside: auto; }
+    .secao-longa .secao-num,
+    .secao-longa .secao-titulo {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    .clausula, .equip-item, .garantia-card {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* capa enxuta o bastante pra caber inteira numa página */
+    .capa { padding: 32px 8% 28px; }
+    .capa-topo { margin-bottom: 28px; }
+    .capa-titulo { margin-bottom: 24px; }
+    .capa-label, .capa-valor { padding: 10px 20px; }
+
+    /* evita uma página quase em branco só com o rodapé no final */
+    .pagina { padding-bottom: 16px; }
+    .rodape { padding: 10px 40px; }
+    .capa-empresa { margin-top: 20px; }
     .capa, .capa-tabela, .capa-linha {
       break-inside: avoid;
       page-break-inside: avoid;
@@ -617,7 +642,7 @@
   </div>
 
   <!-- 07 CLÁUSULAS -->
-  <div class="secao">
+  <div class="secao secao-longa">
     <div class="secao-num">07 · Termos contratuais</div>
     <h2 class="secao-titulo">Condições da prestação de serviço</h2>
 
