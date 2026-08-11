@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Banner de serviços — Solar Para Todos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:   #0d2156;
+    --orange: #f0a818;
+    --white:  #ffffff;
+    --muted:  rgba(255,255,255,0.55);
+  }
+
+  body { font-family: 'Poppins', sans-serif; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* foto */
+  .foto-wrap {
+    position: relative;
+    height: 820px;
+    width: 100%;
+  }
+
+  .foto-wrap > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .foto-wrap::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 260px;
+    background: linear-gradient(to bottom, transparent, var(--navy) 92%);
+  }
+
+  .topo {
+    position: absolute;
+    top: 56px; left: 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+  }
+
+  .logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--orange);
+  }
+
+  .marca {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+
+  /* conteúdo */
+  .conteudo {
+    flex: 1;
+    padding: 0 76px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .kicker {
+    color: var(--orange);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+  }
+
+  .titulo {
+    margin-top: 14px;
+    color: var(--white);
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .tags {
+    margin-top: 28px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 100px;
+    padding: 14px 28px;
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  /* rodapé */
+  .rodape {
+    margin-top: auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .contatos { display: flex; flex-direction: column; gap: 8px; }
+
+  .contato-item {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .contato-item span {
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .insta {
+    color: var(--orange);
+    font-size: 20px;
+    font-weight: 700;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="foto-wrap">
+    <img src="../../../identidade/zequinha.jpg" alt="Zequinha — Solar Para Todos">
+    <div class="topo">
+      <img class="logo" src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="Solar Para Todos">
+      <div class="marca">Solar Para<br>Todos</div>
+    </div>
+  </div>
+
+  <div class="conteudo">
+    <div class="kicker">Quem cuida do seu projeto</div>
+    <div class="titulo">Vendas, instalação<br>e manutenção —<br>tudo com a gente.</div>
+
+    <div class="tags">
+      <div class="tag">Vendas</div>
+      <div class="tag">Instalações</div>
+      <div class="tag">Manutenções</div>
+    </div>
+
+    <div class="rodape">
+      <div class="contatos">
+        <div class="contato-item">(94) 99908-5671 <span>· Parauapebas</span></div>
+        <div class="contato-item">(94) 99200-2939 <span>· Canaã dos Carajás</span></div>
+      </div>
+      <div class="insta">@solarparatodosparauapebas</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
