@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta de Fechamento — Solar Para Todos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:   #0d2156;
+      --orange: #f0a818;
+      --white:  #ffffff;
+      --off:    #f7f7f5;
+      --text:   #1a1a1a;
+      --muted:  #777;
+      --border: #e5e5e0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--off);
+    }
+
+    /* ── CABEÇALHO ── */
+    .cabecalho {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cab-marca {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cab-estrela {
+      width: 32px;
+      height: 32px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cab-estrela svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: var(--orange);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cab-nome {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cab-cliente {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── PÁGINA ── */
+    .pagina {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* ── SEÇÃO ── */
+    .secao {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 52px 56px;
+      margin-top: 32px;
+    }
+
+    .secao-num {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .secao-titulo {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .secao-subtitulo {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 540px;
+      margin-bottom: 36px;
+    }
+
+    /* ── RESUMO (entregáveis) ── */
+    .resumo-itens {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .resumo-item {
+      background: var(--off);
+      border-radius: 12px;
+      padding: 24px 24px 20px;
+      border-left: 4px solid var(--orange);
+    }
+
+    .resumo-num {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .resumo-nome {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .resumo-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── ESCOPO ── */
+    .escopo-lista {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 32px;
+    }
+
+    .escopo-lista li {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.45;
+    }
+
+    .escopo-lista li::before {
+      content: '✓';
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--orange);
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ── INVESTIMENTO ── */
+    .inv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .inv-card {
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 36px 32px 32px;
+      position: relative;
+    }
+
+    .inv-card.destaque {
+      border-color: var(--orange);
+    }
+
+    .inv-recomendado {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .inv-tipo {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .inv-valor {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .inv-valor span {
+      font-size: 22px;
+      font-weight: 600;
+      vertical-align: super;
+      letter-spacing: 0;
+    }
+
+    .inv-valor-cents {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .inv-descricao {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .inv-desc-linha {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .inv-desc-linha strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .inv-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
+    }
+
+    .inv-destaque-linha {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* ── PRÓXIMOS PASSOS ── */
+    .passos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .passo {
+      background: var(--off);
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+
+    .passo-num {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .passo-titulo {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .passo-texto {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-box {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 52px 56px;
+      text-align: center;
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,168,24,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-pre {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .cta-titulo {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .cta-titulo span { color: var(--orange); }
+
+    .cta-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      max-width: 460px;
+      margin: 0 auto 16px;
+    }
+
+    .cta-validade {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 8px;
+    }
+
+    .cta-assinatura {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+
+    .cta-assinatura strong {
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ── RODAPÉ ── */
+    .rodape {
+      text-align: center;
+      padding: 24px 40px;
+      font-size: 12px;
+      color: rgba(0,0,0,0.3);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .pagina { padding: 0 20px 60px; }
+      .secao { padding: 36px 28px; }
+      .resumo-itens { grid-template-columns: 1fr; }
+      .escopo-lista { grid-template-columns: 1fr; }
+      .inv-grid { grid-template-columns: 1fr; }
+      .passos { grid-template-columns: 1fr; }
+      .cta-box { padding: 36px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CABEÇALHO -->
+<div class="cabecalho">
+  <div class="cab-marca">
+    <div class="cab-estrela">
+      <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    </div>
+    <span class="cab-nome">Thiago Mendes Designer</span>
+  </div>
+  <span class="cab-cliente">Solar Para Todos</span>
+</div>
+
+<div class="pagina">
+
+  <!-- SEÇÃO 01 — RESUMO -->
+  <div class="secao">
+    <div class="secao-num">01 · O que já está pronto</div>
+    <h2 class="secao-titulo">Antes de fechar,<br>já entregamos isso.</h2>
+    <p class="secao-subtitulo">Dois materiais feitos do zero, especialmente para a Solar Para Todos. Você já pode ver e usar agora.</p>
+
+    <div class="resumo-itens">
+      <div class="resumo-item">
+        <div class="resumo-num">Entregável 1</div>
+        <div class="resumo-nome">Site profissional completo</div>
+        <p class="resumo-desc">Landing page com todas as seções: hero, serviços, processo, Zequinha, contato e botões de WhatsApp. Pronto pra publicar online.</p>
+      </div>
+      <div class="resumo-item">
+        <div class="resumo-num">Entregável 2</div>
+        <div class="resumo-nome">Carrossel para Instagram</div>
+        <p class="resumo-desc">Post educativo focado em donos de negócio no Pará. Com legenda e hashtags prontas pra publicar no feed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 02 — ESCOPO -->
+  <div class="secao">
+    <div class="secao-num">02 · Escopo contratado</div>
+    <h2 class="secao-titulo">O que está<br>incluso no serviço.</h2>
+    <p class="secao-subtitulo">Tudo o que a Solar Para Todos precisa pra ter uma presença digital que converte visitante em orçamento.</p>
+
+    <ul class="escopo-lista">
+      <li>Site publicado e no ar</li>
+      <li>SEO local (Parauapebas e Canaã)</li>
+      <li>Carrosséis educativos mensais</li>
+      <li>Legenda e hashtags por post</li>
+      <li>Calendário editorial mensal</li>
+      <li>Google Meu Negócio otimizado</li>
+      <li>Posts focados no segmento comercial</li>
+      <li>Relatório mensal de resultados</li>
+      <li>Gestão de anúncios no Instagram</li>
+      <li>Suporte direto via WhatsApp</li>
+    </ul>
+  </div>
+
+  <!-- SEÇÃO 03 — INVESTIMENTO -->
+  <div class="secao">
+    <div class="secao-num">03 · Investimento</div>
+    <h2 class="secao-titulo">Duas formas<br>de fechar.</h2>
+    <p class="secao-subtitulo">Sem mensalidade obrigatória no início. Você escolhe a forma de pagamento.</p>
+
+    <div class="inv-grid">
+
+      <!-- PIX À VISTA -->
+      <div class="inv-card destaque">
+        <div class="inv-recomendado">Recomendado</div>
+        <div class="inv-tipo">PIX à vista</div>
+        <div class="inv-valor">
+          <span>R$</span> 2.500<span class="inv-valor-cents">,00</span>
+        </div>
+        <div class="inv-descricao">
+          <p class="inv-desc-linha">Pagamento único no ato do fechamento.</p>
+          <p class="inv-desc-linha"><strong>Início imediato</strong> em até 48h após a confirmação.</p>
+          <hr class="inv-divider">
+          <p class="inv-destaque-linha">Economia de R$ 200 frente ao parcelado.</p>
+        </div>
+      </div>
+
+      <!-- PARCELADO -->
+      <div class="inv-card">
+        <div class="inv-tipo">Parcelado</div>
+        <div class="inv-valor">
+          3<span style="font-size:22px;font-weight:700"> x de R$ 900</span>
+        </div>
+        <div class="inv-descricao">
+          <p class="inv-desc-linha">Total de R$ 2.700 em 3 parcelas mensais no PIX.</p>
+          <p class="inv-desc-linha"><strong>1ª parcela</strong> no fechamento, 2ª e 3ª nas datas seguintes.</p>
+          <hr class="inv-divider">
+          <p class="inv-desc-linha">Início imediato após confirmação da 1ª parcela.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEÇÃO 04 — PRÓXIMOS PASSOS -->
+  <div class="secao">
+    <div class="secao-num">04 · Próximos passos</div>
+    <h2 class="secao-titulo">Como começa.</h2>
+    <p class="secao-subtitulo">Três passos simples e a Solar Para Todos já entra na nova fase de marketing.</p>
+
+    <div class="passos">
+      <div class="passo">
+        <div class="passo-num">01</div>
+        <div class="passo-titulo">Aprovação da proposta</div>
+        <p class="passo-texto">Zequinha confirma o fechamento e escolhe a forma de pagamento. Enviamos contrato simples por WhatsApp.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-num">02</div>
+        <div class="passo-titulo">Pagamento e kickoff</div>
+        <p class="passo-texto">Primeira parcela (ou PIX único) confirmada. Marcamos uma reunião rápida em até 48h pra alinhar os detalhes finais.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-num">03</div>
+        <div class="passo-titulo">Primeiras entregas em 7 dias</div>
+        <p class="passo-texto">Site no ar, primeiro carrossel publicado e calendário editorial do mês na sua mão. O Google e o Instagram já começam a trabalhar por você.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta-box">
+    <div class="cta-pre">Pronto pra fechar?</div>
+    <h2 class="cta-titulo">Vamos colocar a Solar Para Todos<br><span>no lugar que merece.</span></h2>
+    <p class="cta-sub">Esta proposta é válida por 7 dias a partir da data de envio. Aprovação por WhatsApp já é suficiente pra iniciar.</p>
+    <p class="cta-validade">Proposta válida até: Junho de 2026</p>
+    <div class="cta-assinatura">
+      <strong>Thiago Mendes Designer</strong><br>
+      Marketing Digital · Design
+    </div>
+  </div>
+
+</div>
+
+<!-- RODAPÉ -->
+<div class="rodape">
+  Proposta Solar Para Todos · Thiago Mendes Designer
+</div>
+
+</body>
+</html>

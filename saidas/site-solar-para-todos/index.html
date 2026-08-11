@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Para Todos — Energia Solar em Parauapebas e Canaã</title>
+  <meta name="description" content="Projetos personalizados de energia solar residencial e comercial em Parauapebas e Canaã dos Carajás, Pará. Orçamento gratuito.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:   #0d2156;
+      --orange: #f0a818;
+      --white:  #ffffff;
+      --off:    #f5f5f0;
+      --text:   #1a1a1a;
+      --muted:  #666;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(13, 33, 86, 0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--orange);
+    }
+
+    .nav-logo span {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--navy);
+      padding: 10px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: opacity .2s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0d2156 0%, #1a3a8f 60%, #0d2156 100%);
+      display: flex;
+      align-items: center;
+      padding: 120px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,168,24,0.15) 0%, transparent 70%);
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: -150px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      border: 2px dashed rgba(240,168,24,0.25);
+    }
+
+    .hero-content {
+      max-width: 680px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(240,168,24,0.15);
+      border: 1px solid rgba(240,168,24,0.4);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    #hero h1 {
+      font-size: clamp(48px, 5.5vw, 80px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.0;
+      letter-spacing: -0.035em;
+      margin-bottom: 24px;
+    }
+
+    #hero h1 span { color: var(--orange); }
+
+    #hero p {
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin-bottom: 48px;
+      max-width: 540px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--navy);
+      padding: 18px 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 18px 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color .2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stat-num {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 5%; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .section-title span { color: var(--orange); }
+
+    .section-sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 560px;
+      margin-bottom: 60px;
+    }
+
+    .rule-orange {
+      width: 56px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    /* ── SOBRE ── */
+    #sobre {
+      background: var(--off);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sobre-img {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #0d2156, #1a3a8f);
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sobre-logo-big {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--orange);
+    }
+
+    .sobre-features {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg { width: 24px; height: 24px; fill: var(--navy); }
+
+    .feature-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .feature-text {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      background: var(--white);
+      max-width: 100%;
+    }
+
+    .servicos-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .servico-card {
+      background: var(--off);
+      border-radius: 20px;
+      padding: 48px 40px;
+      border-top: 4px solid transparent;
+      transition: border-color .25s, transform .25s;
+    }
+
+    .servico-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-4px);
+    }
+
+    .servico-tag {
+      display: inline-block;
+      background: rgba(13,33,86,0.08);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .servico-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .servico-text {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .servico-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .servico-items li {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .servico-items li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* ── COMO FUNCIONA ── */
+    #como-funciona {
+      background: var(--navy);
+    }
+
+    #como-funciona .section-label { color: var(--orange); }
+    #como-funciona .section-title { color: #fff; }
+    #como-funciona .section-sub   { color: rgba(255,255,255,0.65); }
+
+    .como-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: rgba(240,168,24,0.3);
+      z-index: 0;
+    }
+
+    .step-card {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--navy);
+      font-size: 28px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .step-text {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.55;
+    }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      background: var(--off);
+    }
+
+    .depoimentos-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .depo-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .depo-quote {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 0.8;
+      margin-bottom: 16px;
+      opacity: 0.4;
+    }
+
+    .depo-text {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .depo-author {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .depo-role {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .confianca-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      text-decoration: none;
+      min-height: 200px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .confianca-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    }
+
+    .confianca-num {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .confianca-texto {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .confianca-link {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    /* ── CONTATO ── */
+    #contato {
+      background: var(--navy);
+      text-align: center;
+    }
+
+    #contato .section-title { color: #fff; }
+    #contato .section-sub   { color: rgba(255,255,255,0.65); margin: 0 auto 48px; }
+
+    .contato-cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .contato-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 32px 40px;
+      min-width: 220px;
+    }
+
+    .contato-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .contato-card-value {
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .wpp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #25D366;
+      color: #fff;
+      padding: 22px 56px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .wpp-btn:hover { transform: translateY(-2px); opacity: 0.92; }
+
+    .wpp-btn svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070f25;
+      padding: 40px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--orange);
+    }
+
+    .footer-logo span {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-locations {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wpp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 200;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+
+    .wpp-float:hover { transform: scale(1.1); }
+    .wpp-float svg { width: 32px; height: 32px; fill: #fff; }
+
+    /* ── ZEQUINHA ── */
+    #zequinha {
+      background: var(--white);
+    }
+
+    .zequinha-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .zequinha-foto {
+      position: relative;
+    }
+
+    .zequinha-foto img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .zequinha-badge {
+      position: absolute;
+      bottom: -20px;
+      left: 40px;
+      background: var(--navy);
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 12px;
+      border-left: 4px solid var(--orange);
+      box-shadow: 0 8px 32px rgba(13,33,86,0.2);
+    }
+
+    .zequinha-badge-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .zequinha-badge-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    .zequinha-texto {
+      padding-bottom: 20px;
+    }
+
+    .zequinha-frase {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.55;
+      border-left: 4px solid var(--orange);
+      padding-left: 24px;
+      margin-top: 32px;
+      font-style: italic;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid::before { display: none; }
+      .depoimentos-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="Solar Para Todos">
+    <span>Solar Para<br>Todos</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#zequinha">Zequinha</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#depoimentos">Clientes</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5594999085671" target="_blank" class="nav-cta">Orçamento grátis</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Parauapebas · Canaã dos Carajás · Pará</div>
+    <h1>Chega de pagar<br>caro na conta<br>de <span>luz.</span></h1>
+    <p>A Solar Para Todos instala energia solar no seu negócio ou na sua casa — e você começa a economizar já no primeiro mês.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5594999085671" target="_blank" class="btn-primary">Orçamento gratuito</a>
+      <a href="#como-funciona" class="btn-ghost">Como funciona</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">95%</div>
+        <div class="stat-label">de redução na conta</div>
+      </div>
+      <div>
+        <div class="stat-num">25</div>
+        <div class="stat-label">anos de garantia</div>
+      </div>
+      <div>
+        <div class="stat-num">2</div>
+        <div class="stat-label">unidades no Pará</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img">
+      <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="Solar Para Todos" class="sobre-logo-big">
+    </div>
+    <div>
+      <div class="section-label">Sobre a empresa</div>
+      <div class="rule-orange"></div>
+      <h2 class="section-title">Energia solar<br>acessível pra<br><span>todo mundo</span></h2>
+      <p class="section-sub">No Pará, a energia elétrica está entre as mais caras do Brasil. Desde que abrimos, nosso objetivo é simples: levar energia solar pra quem precisa reduzir custos — do dono de padaria ao empresário.</p>
+      <div class="sobre-features">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Projeto personalizado</div>
+            <div class="feature-text">Cada instalação é dimensionada pro consumo real do seu imóvel. Sem fórmula genérica.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Do início ao fim</div>
+            <div class="feature-text">Cuidamos do projeto, da homologação na concessionária e da instalação completa.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Presença local</div>
+            <div class="feature-text">Duas lojas físicas em Parauapebas e Canaã dos Carajás — suporte próximo quando precisar.</div>
+            <div style="display:flex;gap:16px;margin-top:12px;flex-wrap:wrap">
+              <a href="https://www.google.com/maps/place/Solar+Para+todos+Brasil/@-6.0825778,-49.859978,17z" target="_blank" style="font-size:13px;font-weight:600;color:#003a7c;text-decoration:none;border-bottom:2px solid #f0a818;padding-bottom:2px">Parauapebas →</a>
+              <a href="https://www.google.com/maps/place/6%C2%B032'03.3%22S+49%C2%B051'21.5%22W/@-6.5342618,-49.8585321,17z" target="_blank" style="font-size:13px;font-weight:600;color:#003a7c;text-decoration:none;border-bottom:2px solid #f0a818;padding-bottom:2px">Canaã dos Carajás →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZEQUINHA -->
+<section id="zequinha">
+  <div class="zequinha-grid">
+    <div class="zequinha-foto">
+      <img src="../../identidade/zequinha.jpg" alt="Zequinha — Solar Para Todos">
+      <div class="zequinha-badge">
+        <div class="zequinha-badge-name">Zequinha</div>
+        <div class="zequinha-badge-role">Solar Para Todos · Fundador</div>
+      </div>
+    </div>
+    <div class="zequinha-texto">
+      <div class="section-label">Quem está por trás</div>
+      <div class="rule-orange"></div>
+      <h2 class="section-title">Mais do que<br>um negócio,<br><span>uma missão</span></h2>
+      <p class="section-sub">O Zequinha conhece na prática o que é pagar caro demais de energia elétrica. Foi essa experiência que o levou a criar a Solar Para Todos e levar energia solar pra quem mais precisa no Pará.</p>
+      <div class="zequinha-frase">
+        "A energia solar não é luxo. É o direito de qualquer negócio ou família de parar de perder dinheiro todo mês."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="servicos-inner">
+    <div class="section-label">O que fazemos</div>
+    <div class="rule-orange"></div>
+    <h2 class="section-title">Residencial<br>ou <span>comercial</span></h2>
+    <p class="section-sub">Seja pra sua casa ou seu negócio, a Solar Para Todos tem a solução certa.</p>
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <div class="servico-tag">Residencial</div>
+        <div class="servico-title">Pra sua casa</div>
+        <p class="servico-text">Elimine ou reduza drasticamente a conta de luz da sua residência. O sistema paga o próprio investimento em poucos anos e gera economia por décadas.</p>
+        <ul class="servico-items">
+          <li>Dimensionamento do sistema ideal</li>
+          <li>Instalação profissional e homologada</li>
+          <li>Garantia de 25 anos nos painéis</li>
+          <li>Suporte técnico pós-instalação</li>
+        </ul>
+      </div>
+      <div class="servico-card">
+        <div class="servico-tag">Comercial</div>
+        <div class="servico-title">Pro seu negócio</div>
+        <p class="servico-text">Padarias, lava jatos, restaurantes, escritórios — qualquer comércio com alto consumo de energia tem retorno rápido com energia solar.</p>
+        <ul class="servico-items">
+          <li>Projetos de médio e grande porte</li>
+          <li>Financiamento facilitado disponível</li>
+          <li>Redução de até 95% na conta</li>
+          <li>Retorno do investimento em 4 a 6 anos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="como-inner">
+    <div class="section-label">Processo</div>
+    <div class="rule-orange"></div>
+    <h2 class="section-title">Como funciona</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.65); margin-bottom:64px">Do primeiro contato até você pagando quase zero de energia.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Orçamento grátis</div>
+        <p class="step-text">Nos conta o consumo médio mensal — a gente calcula o sistema ideal e o quanto você vai economizar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Projeto técnico</div>
+        <p class="step-text">Elaboramos o projeto e cuidamos de toda a documentação e homologação junto à distribuidora.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Instalação</div>
+        <p class="step-text">Nossa equipe instala os painéis com segurança e agilidade. Em poucos dias seu sistema já está funcionando.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-title">Economia</div>
+        <p class="step-text">Você começa a economizar no primeiro mês. A conta de luz despenca — e o sol trabalha por você por 25 anos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANÇA -->
+<section id="depoimentos">
+  <div class="depoimentos-inner">
+    <div class="section-label">Clientes</div>
+    <div class="rule-orange"></div>
+    <h2 class="section-title">Não pedimos<br>pra você<br><span>confiar na palavra</span></h2>
+    <p class="section-sub">Confira o trabalho, o endereço e quem está por trás — antes de decidir qualquer coisa.</p>
+    <div class="depoimentos-grid">
+      <a href="https://instagram.com/solarparatodosparauapebas" target="_blank" class="depo-card confianca-card">
+        <div class="confianca-num">23,5 mil</div>
+        <p class="confianca-texto">pessoas acompanham as instalações reais no Instagram, todos os dias.</p>
+        <span class="confianca-link">Ver o perfil →</span>
+      </a>
+      <a href="https://www.google.com/maps/place/Solar+Para+todos+Brasil/@-6.0825778,-49.859978,17z" target="_blank" class="depo-card confianca-card">
+        <div class="confianca-num">2 unidades</div>
+        <p class="confianca-texto">físicas no Pará — Parauapebas e Canaã dos Carajás. Não é só um anúncio online.</p>
+        <span class="confianca-link">Ver no mapa →</span>
+      </a>
+      <a href="https://wa.me/5594999085671" target="_blank" class="depo-card confianca-card">
+        <div class="confianca-num">Zequinha</div>
+        <p class="confianca-texto">o fundador atende direto no WhatsApp. Sem call center, sem enrolação.</p>
+        <span class="confianca-link">Falar agora →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="section-label">Fale com a gente</div>
+  <div class="rule-orange" style="margin:0 auto 28px"></div>
+  <h2 class="section-title">Orçamento<br><span>gratuito</span></h2>
+  <p class="section-sub">A gente calcula quanto você economiza antes de você decidir qualquer coisa. Sem compromisso.</p>
+
+  <div class="contato-cards">
+    <div class="contato-card">
+      <div class="contato-card-label">WhatsApp Parauapebas</div>
+      <div class="contato-card-value">
+        <a href="https://wa.me/5594999085671" target="_blank" style="color:#f0a818;text-decoration:none">(94) 99908-5671</a>
+      </div>
+      <div style="margin-top:12px">
+        <a href="https://www.google.com/maps/place/Solar+Para+todos+Brasil/@-6.0825778,-49.859978,17z" target="_blank" style="color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none;letter-spacing:0.04em">
+          Ver no mapa →
+        </a>
+      </div>
+    </div>
+    <div class="contato-card">
+      <div class="contato-card-label">WhatsApp Canaã</div>
+      <div class="contato-card-value">
+        <a href="https://wa.me/5594992002939" target="_blank" style="color:#f0a818;text-decoration:none">(94) 99200-2939</a>
+      </div>
+      <div style="margin-top:12px">
+        <a href="https://www.google.com/maps/place/6%C2%B032'03.3%22S+49%C2%B051'21.5%22W/@-6.5342618,-49.8585321,17z" target="_blank" style="color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none;letter-spacing:0.04em">
+          Ver no mapa →
+        </a>
+      </div>
+    </div>
+    <div class="contato-card">
+      <div class="contato-card-label">Instagram</div>
+      <div class="contato-card-value">
+        <a href="https://instagram.com/solarparatodosparauapebas" target="_blank" style="color:#f0a818;text-decoration:none">@solarparatodosparauapebas</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5594999085671" target="_blank" class="wpp-btn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar no WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="Solar Para Todos">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="footer-text">© 2025 Solar Para Todos. Todos os direitos reservados.</div>
+  <div class="footer-locations">Parauapebas · Canaã dos Carajás · PA</div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5594999085671" target="_blank" class="wpp-float" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
