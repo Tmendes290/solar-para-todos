@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exemplos de feed — Solar Para Todos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:   #0d2156;
+    --navy2:  #17337c;
+    --orange: #f0a818;
+    --off:    #f5f5f0;
+    --white:  #ffffff;
+    --muted:  rgba(255,255,255,0.6);
+  }
+
+  body { font-family: 'Poppins', sans-serif; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    padding: 90px 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide.navy { background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%); }
+  .slide.orange { background: var(--orange); }
+  .slide.off { background: var(--off); }
+
+  .logo-topo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-topo img {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--orange);
+  }
+
+  .slide.orange .logo-topo img { border-color: var(--navy); }
+
+  .logo-topo span {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .slide.orange .logo-topo span,
+  .slide.off .logo-topo span { color: var(--navy); }
+
+  .kicker {
+    margin-top: 64px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .slide.orange .kicker { color: var(--navy); }
+
+  .titulo {
+    margin-top: 20px;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+
+  .slide.orange .titulo,
+  .slide.off .titulo { color: var(--navy); }
+
+  .texto {
+    margin-top: 28px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 820px;
+  }
+
+  .slide.orange .texto { color: rgba(13,33,86,0.75); }
+  .slide.off .texto { color: #555; }
+
+  .selo-exemplo {
+    position: absolute;
+    top: 32px; right: 32px;
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  .slide.orange .selo-exemplo,
+  .slide.off .selo-exemplo { background: rgba(13,33,86,0.12); color: var(--navy); }
+
+  /* comparativo (antes/depois e economia) */
+  .comparativo {
+    margin-top: 60px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .comp-bloco {
+    flex: 1;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .comp-label {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .comp-valor {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--white);
+  }
+
+  .comp-seta {
+    font-size: 40px;
+    color: var(--orange);
+    font-weight: 800;
+  }
+
+  /* rodapé */
+  .rodape {
+    margin-top: auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .slide.orange .rodape,
+  .slide.off .rodape { color: var(--navy); border-top-color: rgba(13,33,86,0.15); }
+</style>
+</head>
+<body>
+
+<!-- 1 — DICA RÁPIDA -->
+<div class="slide off">
+  <div class="selo-exemplo">EXEMPLO</div>
+  <div class="logo-topo">
+    <img src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="kicker">Dica rápida</div>
+  <div class="titulo">Painel solar gera energia até em dia nublado.</div>
+  <div class="texto">A produção cai um pouco, mas não para. Quem instala continua economizando o ano inteiro.</div>
+  <div class="rodape">@solarparatodosparauapebas</div>
+</div>
+
+<!-- 2 — ANTES / DEPOIS -->
+<div class="slide navy">
+  <div class="selo-exemplo">EXEMPLO</div>
+  <div class="logo-topo">
+    <img src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="kicker">Antes / depois</div>
+  <div class="titulo">A conta de luz muda de figura.</div>
+  <div class="comparativo">
+    <div class="comp-bloco">
+      <div class="comp-label">Antes</div>
+      <div class="comp-valor">R$ [XXX]</div>
+    </div>
+    <div class="comp-seta">→</div>
+    <div class="comp-bloco">
+      <div class="comp-label">Depois</div>
+      <div class="comp-valor">R$ [XX]</div>
+    </div>
+  </div>
+  <div class="rodape">Valores ilustrativos · @solarparatodosparauapebas</div>
+</div>
+
+<!-- 3 — BASTIDORES -->
+<div class="slide orange">
+  <div class="selo-exemplo">EXEMPLO</div>
+  <div class="logo-topo">
+    <img src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="kicker">Bastidores</div>
+  <div class="titulo">Cada instalação tem uma equipe de verdade por trás.</div>
+  <div class="texto">Do primeiro contato até o painel ligado, o mesmo time acompanha o projeto inteiro.</div>
+  <div class="rodape">@solarparatodosparauapebas</div>
+</div>
+
+<!-- 4 — PERGUNTA PRO SEGUIDOR -->
+<div class="slide off">
+  <div class="selo-exemplo">EXEMPLO</div>
+  <div class="logo-topo">
+    <img src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="kicker">Pergunta pro seguidor</div>
+  <div class="titulo">Você sabe quanto sua conta de luz vai pesar daqui 5 anos?</div>
+  <div class="texto">Comenta aqui embaixo quanto você paga hoje. A gente te mostra o quanto dá pra economizar.</div>
+  <div class="rodape">@solarparatodosparauapebas</div>
+</div>
+
+<!-- 5 — COMPARATIVO DE ECONOMIA -->
+<div class="slide navy">
+  <div class="selo-exemplo">EXEMPLO</div>
+  <div class="logo-topo">
+    <img src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="kicker">Comparativo de economia</div>
+  <div class="titulo">Com solar ou sem solar, a diferença é grande.</div>
+  <div class="comparativo">
+    <div class="comp-bloco">
+      <div class="comp-label">Sem solar / ano</div>
+      <div class="comp-valor">R$ [X.XXX]</div>
+    </div>
+    <div class="comp-bloco">
+      <div class="comp-label">Com solar / ano</div>
+      <div class="comp-valor">R$ [XXX]</div>
+    </div>
+  </div>
+  <div class="rodape">Valores ilustrativos · @solarparatodosparauapebas</div>
+</div>
+
+<!-- 6 — NOVIDADE DO MÊS -->
+<div class="slide orange">
+  <div class="selo-exemplo">EXEMPLO</div>
+  <div class="logo-topo">
+    <img src="../../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="kicker">Novidade do mês</div>
+  <div class="titulo">Tem novidade chegando na Solar Para Todos.</div>
+  <div class="texto">Espaço reservado pro que estiver em destaque no mês — lançamento, condição especial ou parceria nova.</div>
+  <div class="rodape">@solarparatodosparauapebas</div>
+</div>
+
+</body>
+</html>
