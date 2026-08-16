@@ -19,6 +19,11 @@ const alvos = [
     // em vez da largura customizada dos outros dois documentos
     preferCSSPageSize: true,
   },
+  {
+    html: '../saidas/apresentacao-fechamento-solar-para-todos/apresentacao.html',
+    pdf: '../saidas/apresentacao-fechamento-solar-para-todos/apresentacao-solar-para-todos.pdf',
+    preferCSSPageSize: true,
+  },
 ];
 
 (async () => {
