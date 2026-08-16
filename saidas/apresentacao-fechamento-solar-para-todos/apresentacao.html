@@ -223,25 +223,87 @@
   .carrossel-preview img:nth-child(2) { z-index: 2; }
   .carrossel-preview img:nth-child(3) { transform: rotate(7deg); margin-left: -34px; z-index: 1; }
 
-  /* ── GRID DO FEED ── */
-  .feed-grid {
-    margin-top: 32px;
-    display: grid;
-    grid-template-columns: repeat(3, 224px);
-    grid-template-rows: repeat(3, 224px);
-    gap: 10px;
-    align-self: center;
+  /* ── SLIDE ANCORADO NO TOPO (evita colidir com marca-topo) ── */
+  .slide.ancorado {
+    justify-content: flex-start;
+    padding-top: 170px;
   }
 
-  .feed-tile {
-    width: 224px;
-    height: 224px;
-    border-radius: 10px;
+  /* ── COMPARATIVO ANTES / DEPOIS ── */
+  .comparativo-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 70px;
+    align-items: flex-start;
+  }
+
+  .comparativo-label {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .comparativo-label.antes { color: rgba(255,255,255,0.4); }
+  .comparativo-label.depois { color: var(--orange); }
+
+  .antes-frame {
+    width: 760px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .antes-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  .depois-frame {
+    width: 420px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+
+  .depois-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 0 2px;
+  }
+
+  .depois-header img {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--orange);
+  }
+
+  .depois-header span {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .depois-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 126px);
+    grid-template-rows: repeat(3, 126px);
+    gap: 8px;
+  }
+
+  .depois-tile {
+    border-radius: 6px;
     overflow: hidden;
     position: relative;
   }
 
-  .feed-tile img {
+  .depois-tile img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -249,45 +311,40 @@
     display: block;
   }
 
-  .feed-tile-real::after {
-    content: 'PRONTO';
+  .depois-tile.real::after {
+    content: '';
     position: absolute;
-    top: 10px; right: 10px;
+    top: 6px; right: 6px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
     background: var(--orange);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    padding: 4px 9px;
-    border-radius: 100px;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.8);
   }
 
-  .feed-tile-ph {
-    background: rgba(255,255,255,0.05);
-    border: 1.5px dashed rgba(255,255,255,0.25);
+  .depois-tile.ph {
+    background: var(--off);
+    border: 1px dashed rgba(13,33,86,0.2);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 6px;
   }
 
-  .feed-tile-ph span {
-    font-size: 13px;
+  .depois-tile.ph span {
+    font-size: 9px;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.03em;
-    line-height: 1.4;
+    color: rgba(13,33,86,0.45);
+    line-height: 1.25;
   }
 
-  .feed-nota {
-    margin-top: 20px;
-    font-size: 16px;
+  .comparativo-nota {
+    margin-top: 32px;
+    font-size: 17px;
     color: rgba(255,255,255,0.55);
   }
 
-  .feed-nota strong { color: var(--orange); }
+  .comparativo-nota strong { color: var(--orange); }
 
   /* ── PONTOS (benefícios) ── */
   .pontos {
@@ -635,35 +692,51 @@
   </div>
 </div>
 
-<!-- SLIDE 6 — VISÃO DO FEED -->
-<div class="slide navy">
+<!-- SLIDE 6 — ANTES / DEPOIS DO FEED -->
+<div class="slide navy ancorado">
   <div class="marca-topo">
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
   <div class="contador">06 / 10</div>
   <div class="kicker">Visão do feed</div>
-  <div class="titulo">Assim fica a <span>grade</span> do Instagram.</div>
-  <div class="subtitulo">Um mix de carrossel educativo e posts de conversão, sempre na identidade da marca.</div>
+  <div class="titulo">Do jeito que está,<br>pro jeito que <span>merece.</span></div>
 
-  <div class="feed-grid">
-    <div class="feed-tile feed-tile-real">
-      <img src="../../marketing/conteudo/carrossel-energia-solar-negocios-2025-05-25/instagram/slide-01.png" alt="Carrossel educativo">
+  <div class="comparativo-row">
+    <div>
+      <div class="comparativo-label antes">Antes — perfil de hoje</div>
+      <div class="antes-frame">
+        <img src="instagram-atual.png" alt="Instagram atual da Solar Para Todos">
+      </div>
     </div>
-    <div class="feed-tile feed-tile-real">
-      <img src="../../marketing/conteudo/post-tabela-precos-2026-08-11/instagram/post.png" alt="Tabela de preços">
+    <div>
+      <div class="comparativo-label depois">Depois — grade nova</div>
+      <div class="depois-frame">
+        <div class="depois-header">
+          <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+          <span>solarparatodosparauapebas</span>
+        </div>
+        <div class="depois-grid">
+          <div class="depois-tile real">
+            <img src="../../marketing/conteudo/carrossel-energia-solar-negocios-2025-05-25/instagram/slide-01.png" alt="Carrossel educativo">
+          </div>
+          <div class="depois-tile real">
+            <img src="../../marketing/conteudo/post-tabela-precos-2026-08-11/instagram/post.png" alt="Tabela de preços">
+          </div>
+          <div class="depois-tile real">
+            <img src="../../marketing/conteudo/post-banner-servicos-2026-08-11/instagram/post.png" alt="Banner de serviços">
+          </div>
+          <div class="depois-tile ph"><span>Dica rápida</span></div>
+          <div class="depois-tile ph"><span>Antes / depois</span></div>
+          <div class="depois-tile ph"><span>Bastidores</span></div>
+          <div class="depois-tile ph"><span>Pergunta pro seguidor</span></div>
+          <div class="depois-tile ph"><span>Comparativo</span></div>
+          <div class="depois-tile ph"><span>Novidade do mês</span></div>
+        </div>
+      </div>
     </div>
-    <div class="feed-tile feed-tile-real">
-      <img src="../../marketing/conteudo/post-banner-servicos-2026-08-11/instagram/post.png" alt="Banner de serviços">
-    </div>
-    <div class="feed-tile feed-tile-ph"><span>Dica rápida</span></div>
-    <div class="feed-tile feed-tile-ph"><span>Antes / depois</span></div>
-    <div class="feed-tile feed-tile-ph"><span>Bastidores da instalação</span></div>
-    <div class="feed-tile feed-tile-ph"><span>Pergunta pro seguidor</span></div>
-    <div class="feed-tile feed-tile-ph"><span>Comparativo de economia</span></div>
-    <div class="feed-tile feed-tile-ph"><span>Novidade do mês</span></div>
   </div>
-  <div class="feed-nota"><strong>3 peças já prontas</strong> — o restante é o ritmo mensal que mantém o feed sempre ativo.</div>
+  <div class="comparativo-nota">Bolinha laranja = <strong>peça já pronta</strong>. O resto é o ritmo mensal que mantém o feed sempre ativo.</div>
 </div>
 
 <!-- SLIDE 7 — ESCOPO -->
