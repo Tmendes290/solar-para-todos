@@ -174,6 +174,55 @@
     line-height: 1.55;
   }
 
+  /* ── PREVIEW SITE (mock de navegador) ── */
+  .browser-mock {
+    margin-top: 48px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    overflow: hidden;
+    width: 1180px;
+    align-self: center;
+  }
+
+  .browser-mock-barra {
+    background: #e8e8e4;
+    padding: 12px 18px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .browser-mock-barra span {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #c4c4bd;
+  }
+
+  .browser-mock img {
+    width: 100%;
+    display: block;
+  }
+
+  /* ── PREVIEW CARROSSEL (thumbnails em leque) ── */
+  .carrossel-preview {
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carrossel-preview img {
+    width: 260px;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    border: 4px solid var(--white);
+    position: relative;
+  }
+
+  .carrossel-preview img:nth-child(1) { transform: rotate(-7deg); margin-right: -34px; z-index: 1; }
+  .carrossel-preview img:nth-child(2) { z-index: 2; }
+  .carrossel-preview img:nth-child(3) { transform: rotate(7deg); margin-left: -34px; z-index: 1; }
+
   /* ── PONTOS (benefícios) ── */
   .pontos {
     margin-top: 56px;
@@ -434,7 +483,7 @@
   <img class="capa-logo" src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="Solar Para Todos">
   <div class="kicker">Proposta de fechamento</div>
   <div class="titulo">Solar Para Todos<br>no lugar que <span>merece.</span></div>
-  <div class="subtitulo">Marketing digital que transforma visibilidade em orçamento pedido.</div>
+  <div class="subtitulo">Design visual que transforma visibilidade em orçamento pedido.</div>
   <div class="capa-assinatura">Apresentado por <strong>Thiago Mendes Designer</strong> · Agosto de 2026</div>
 </div>
 
@@ -444,7 +493,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">02 / 07</div>
+  <div class="contador">02 / 09</div>
   <div class="kicker">Já está pronto</div>
   <div class="titulo">Antes de decidir,<br>vocês já <span>viram o resultado.</span></div>
   <div class="subtitulo">Não é papel. É produto real, pronto pra usar hoje.</div>
@@ -462,13 +511,46 @@
   </div>
 </div>
 
-<!-- SLIDE 3 — POR QUE FAZ SENTIDO -->
+<!-- SLIDE 3 — PREVIEW DO SITE -->
 <div class="slide navy">
   <div class="marca-topo">
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">03 / 07</div>
+  <div class="contador">03 / 09</div>
+  <div class="kicker">Entregável 1</div>
+  <div class="titulo">Assim vai ficar<br>o <span>site</span> de vocês.</div>
+  <div class="subtitulo">Já no ar, responsivo, com identidade da marca em cada seção.</div>
+  <div class="browser-mock">
+    <div class="browser-mock-barra"><span></span><span></span><span></span></div>
+    <img src="print-site.png" alt="Preview do site Solar Para Todos">
+  </div>
+</div>
+
+<!-- SLIDE 4 — PREVIEW DO CARROSSEL -->
+<div class="slide claro">
+  <div class="marca-topo">
+    <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="contador">04 / 09</div>
+  <div class="kicker">Entregável 2</div>
+  <div class="titulo">E o carrossel<br>pronto pra <span>postar.</span></div>
+  <div class="subtitulo">Post educativo, com legenda e hashtags já escritas.</div>
+  <div class="carrossel-preview">
+    <img src="../../marketing/conteudo/carrossel-energia-solar-negocios-2025-05-25/instagram/slide-01.png" alt="Slide 1 do carrossel">
+    <img src="../../marketing/conteudo/carrossel-energia-solar-negocios-2025-05-25/instagram/slide-04.png" alt="Slide 4 do carrossel">
+    <img src="../../marketing/conteudo/carrossel-energia-solar-negocios-2025-05-25/instagram/slide-07.png" alt="Slide 7 do carrossel">
+  </div>
+</div>
+
+<!-- SLIDE 5 — POR QUE FAZ SENTIDO -->
+<div class="slide navy">
+  <div class="marca-topo">
+    <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="contador">05 / 09</div>
   <div class="kicker">Por que faz sentido agora</div>
   <div class="titulo">O Pará paga caro<br>por energia. <span>Vocês têm<br>a solução.</span></div>
   <div class="pontos">
@@ -487,13 +569,13 @@
   </div>
 </div>
 
-<!-- SLIDE 4 — ESCOPO -->
+<!-- SLIDE 6 — ESCOPO -->
 <div class="slide claro">
   <div class="marca-topo">
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">04 / 07</div>
+  <div class="contador">06 / 09</div>
   <div class="kicker">O que está incluso</div>
   <div class="titulo">Tudo que a Solar Para Todos<br>precisa pra <span>converter</span><br>visitante em orçamento.</div>
   <div class="escopo-lista">
@@ -510,13 +592,13 @@
   </div>
 </div>
 
-<!-- SLIDE 5 — INVESTIMENTO -->
+<!-- SLIDE 7 — INVESTIMENTO -->
 <div class="slide navy">
   <div class="marca-topo">
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">05 / 07</div>
+  <div class="contador">07 / 09</div>
   <div class="kicker">Investimento</div>
   <div class="titulo">Duas formas<br>de <span>fechar.</span></div>
   <div class="inv-row">
@@ -529,19 +611,19 @@
     <div class="inv-card">
       <div class="inv-tipo">Parcelado</div>
       <div class="inv-valor">3x <span>R$ 900</span></div>
-      <div class="inv-desc">Total de R$ 2.700 em 3 parcelas mensais no PIX. Início imediato após a 1ª parcela.</div>
+      <div class="inv-desc">Total de R$ 2.700 em 3 parcelas mensais no cartão de crédito. Início imediato após a 1ª parcela.</div>
     </div>
   </div>
   <div class="inv-nota">A partir do <strong>mês 2</strong>, uma mensalidade de <strong>R$ 500</strong> mantém tudo rodando: conteúdo, SEO contínuo e gestão de anúncios.</div>
 </div>
 
-<!-- SLIDE 6 — COMO COMEÇA -->
+<!-- SLIDE 8 — COMO COMEÇA -->
 <div class="slide claro">
   <div class="marca-topo">
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">06 / 07</div>
+  <div class="contador">08 / 09</div>
   <div class="kicker">Próximos passos</div>
   <div class="titulo">Como <span>começa.</span></div>
   <div class="subtitulo">Três passos simples e vocês já entram na nova fase de marketing.</div>
@@ -564,12 +646,12 @@
   </div>
 </div>
 
-<!-- SLIDE 7 — CTA FINAL -->
+<!-- SLIDE 9 — CTA FINAL -->
 <div class="slide navy">
-  <div class="contador">07 / 07</div>
+  <div class="contador">09 / 09</div>
   <div class="kicker">Pronto pra fechar?</div>
   <div class="cta-titulo">Vamos colocar a Solar<br>Para Todos <span>no lugar<br>que merece.</span></div>
-  <div class="cta-sub">Aprovação hoje já é suficiente pra dar início. O primeiro resultado vem em 7 dias.</div>
+  <div class="cta-sub">O objetivo é simples: deixar a Solar Para Todos com a imagem profissional que o tamanho de vocês já merece.</div>
   <div class="cta-contatos">
     <div>
       <div class="cta-contato-label">Proposta preparada por</div>
@@ -584,7 +666,7 @@
 
 <div class="barra-nav">
   <button onclick="mudaSlide(-1)">‹</button>
-  <span id="contador-nav">1 / 7</span>
+  <span id="contador-nav">1 / 9</span>
   <button onclick="mudaSlide(1)">›</button>
 </div>
 
