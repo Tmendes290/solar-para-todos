@@ -367,6 +367,63 @@
     padding-top: 4px;
   }
 
+  /* ── QUEM ESTÁ POR TRÁS ── */
+  .quemsomos-row {
+    margin-top: 44px;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .quemsomos-foto {
+    width: 340px;
+    height: 460px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    position: relative;
+    background: #000;
+  }
+
+  .quemsomos-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .quemsomos-foto::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--navy));
+  }
+
+  .quemsomos-pontos {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .quemsomos-ponto {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.8);
+    padding-left: 22px;
+    border-left: 3px solid var(--orange);
+  }
+
+  .quemsomos-assinatura {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--orange);
+  }
+
   /* ── ESCOPO (lista) ── */
   .escopo-lista {
     margin-top: 56px;
@@ -605,7 +662,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">02 / 11</div>
+  <div class="contador">02 / 12</div>
   <div class="kicker">Já está pronto</div>
   <div class="titulo">Antes de decidir,<br>vocês já <span>viram o resultado.</span></div>
   <div class="subtitulo">Não é papel. É produto real, pronto pra usar hoje.</div>
@@ -634,7 +691,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">03 / 11</div>
+  <div class="contador">03 / 12</div>
   <div class="kicker">Entregável 1</div>
   <div class="titulo">Assim vai ficar<br>o <span>site</span> de vocês.</div>
   <div class="subtitulo">Já no ar, responsivo, com identidade da marca em cada seção.</div>
@@ -650,7 +707,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">04 / 11</div>
+  <div class="contador">04 / 12</div>
   <div class="kicker">Entregável 2</div>
   <div class="titulo">E o carrossel<br>pronto pra <span>postar.</span></div>
   <div class="subtitulo">Post educativo, com legenda e hashtags já escritas.</div>
@@ -667,7 +724,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">05 / 11</div>
+  <div class="contador">05 / 12</div>
   <div class="kicker">Entregável 3</div>
   <div class="titulo">E um <span>contrato</span><br>que passa confiança.</div>
   <div class="subtitulo">O antigo não representava a marca direito. Esse é 100% de vocês — editável, com cláusulas de verdade.</div>
@@ -683,7 +740,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">06 / 11</div>
+  <div class="contador">06 / 12</div>
   <div class="kicker">Por que faz sentido agora</div>
   <div class="titulo">O Pará paga caro<br>por energia. <span>Vocês têm<br>a solução.</span></div>
   <div class="pontos">
@@ -708,7 +765,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">07 / 11</div>
+  <div class="contador">07 / 12</div>
   <div class="kicker">Visão do feed</div>
   <div class="titulo">Do jeito que está,<br>pro jeito que <span>merece.</span></div>
 
@@ -767,7 +824,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">08 / 11</div>
+  <div class="contador">08 / 12</div>
   <div class="kicker">O que está incluso</div>
   <div class="titulo">Tudo que a Solar Para Todos<br>precisa pra <span>converter</span><br>visitante em orçamento.</div>
   <div class="escopo-lista">
@@ -790,7 +847,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">09 / 11</div>
+  <div class="contador">09 / 12</div>
   <div class="kicker">Investimento</div>
   <div class="titulo">Duas formas<br>de <span>fechar.</span></div>
   <div class="inv-row">
@@ -815,7 +872,7 @@
     <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
     <span>Solar Para Todos</span>
   </div>
-  <div class="contador">10 / 11</div>
+  <div class="contador">10 / 12</div>
   <div class="kicker">Próximos passos</div>
   <div class="titulo">Como <span>começa.</span></div>
   <div class="subtitulo">Três passos simples e vocês já entram na nova fase de marketing.</div>
@@ -838,9 +895,32 @@
   </div>
 </div>
 
-<!-- SLIDE 11 — CTA FINAL -->
+<!-- SLIDE 11 — QUEM ESTÁ POR TRÁS -->
+<div class="slide navy ancorado">
+  <div class="marca-topo">
+    <img src="../../identidade/ChatGPT Image 25 de mai. de 2026, 23_08_19.png" alt="">
+    <span>Solar Para Todos</span>
+  </div>
+  <div class="contador">11 / 12</div>
+  <div class="kicker">Quem está por trás</div>
+  <div class="titulo">Não é uma agência<br>grande. É alguém <span>focado<br>no seu resultado.</span></div>
+
+  <div class="quemsomos-row">
+    <div class="quemsomos-foto">
+      <img src="../../identidade/thiago.jpeg" alt="Thiago Mendes">
+    </div>
+    <div class="quemsomos-pontos">
+      <div class="quemsomos-ponto">Tudo que você viu até aqui — o site, o carrossel, o contrato, essa apresentação — foi feito à mão, pensado especificamente pra Solar Para Todos.</div>
+      <div class="quemsomos-ponto">Sem terceirizar, sem time genérico reaplicando o mesmo material pra dez empresas diferentes.</div>
+      <div class="quemsomos-ponto">Atendimento direto comigo, do primeiro contato até o resultado no ar.</div>
+      <div class="quemsomos-assinatura">Thiago Mendes · Design Visual</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12 — CTA FINAL -->
 <div class="slide navy">
-  <div class="contador">11 / 11</div>
+  <div class="contador">12 / 12</div>
   <div class="kicker">Pronto pra fechar?</div>
   <div class="cta-titulo">Vamos colocar a Solar<br>Para Todos <span>no lugar<br>que merece.</span></div>
   <div class="cta-sub">O objetivo é simples: deixar a Solar Para Todos com a imagem profissional que o tamanho de vocês já merece.</div>
@@ -858,7 +938,7 @@
 
 <div class="barra-nav">
   <button onclick="mudaSlide(-1)">‹</button>
-  <span id="contador-nav">1 / 11</span>
+  <span id="contador-nav">1 / 12</span>
   <button onclick="mudaSlide(1)">›</button>
 </div>
 
