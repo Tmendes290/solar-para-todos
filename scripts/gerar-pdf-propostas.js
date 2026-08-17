@@ -5,6 +5,7 @@ const alvos = [
   {
     html: '../saidas/proposta-solar-para-todos/index.html',
     pdf: '../saidas/proposta-solar-para-todos/proposta-solar-para-todos.pdf',
+    preferCSSPageSize: true,
   },
   {
     html: '../saidas/proposta-fechamento-solar-para-todos/index.html',

@@ -7,6 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
     *, *::before, *::after {
       margin: 0; padding: 0; box-sizing: border-box;
       -webkit-print-color-adjust: exact;
@@ -220,7 +225,7 @@
 
     .entregas-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 28px;
     }
 
@@ -638,6 +643,17 @@
       .steps::before   { display: none; }
       .diferenciais-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── IMPRESSÃO ── */
+    @media print {
+      body { background: #fff; }
+      .section { padding: 20px 3%; }
+      .section-inner { max-width: 100%; }
+      .entrega-card, .escopo-card, .step, .diferencial {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
   </style>
 </head>
 <body>
@@ -668,7 +684,7 @@
       </div>
       <div class="hero-meta-item">
         <span class="hero-meta-label">Entregáveis prontos</span>
-        <span class="hero-meta-value">Site + Carrossel</span>
+        <span class="hero-meta-value">Site + Carrossel + Contrato</span>
       </div>
     </div>
   </div>
@@ -680,7 +696,7 @@
     <div class="label">Já pronto pra você ver</div>
     <div class="rule"></div>
     <h2 class="title">O que já foi<br><span>entregue hoje</span></h2>
-    <p class="subtitle">Antes de qualquer conversa sobre escopo ou investimento, quis mostrar na prática o nível do trabalho. Dois entregáveis reais, feitos pra Solar Para Todos.</p>
+    <p class="subtitle">Antes de qualquer conversa sobre escopo ou investimento, quis mostrar na prática o nível do trabalho. Três entregáveis reais, feitos pra Solar Para Todos.</p>
 
     <div class="entregas-grid">
 
@@ -736,6 +752,34 @@
           </ul>
           <a href="https://solar-para-todos-production.up.railway.app/marketing/conteudo/carrossel-energia-solar-negocios-2025-05-25/carrossel.html" class="entrega-link" target="_blank">
             Ver carrossel →
+          </a>
+        </div>
+      </div>
+
+      <!-- CONTRATO -->
+      <div class="entrega-card">
+        <div class="entrega-preview">
+          <div class="entrega-badge">Entregável 3</div>
+          <div class="entrega-preview-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m-9 5h12a2 2 0 002-2V6.828a2 2 0 00-.586-1.414l-2.828-2.828A2 2 0 0014.172 2H6a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="entrega-preview-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="entrega-body">
+          <div class="entrega-tipo">Modelo de contrato comercial</div>
+          <div class="entrega-title">Contrato refeito do zero, com a cara da Solar Para Todos</div>
+          <p class="entrega-desc">O contrato antigo tinha layout quebrado e até logo de outra empresa aparecendo nas páginas. Esse é 100% de vocês — editável direto no navegador, com cláusulas de verdade.</p>
+          <ul class="entrega-itens">
+            <li>Identidade visual da marca</li>
+            <li>Campos editáveis por cliente</li>
+            <li>Cláusulas de pagamento, garantia, LGPD e foro</li>
+            <li>Exporta em PDF pronto pra assinar</li>
+            <li>Reutilizável em toda venda futura</li>
+          </ul>
+          <a href="https://solar-para-todos-production.up.railway.app/saidas/contrato-comercial-modelo/" class="entrega-link" target="_blank">
+            Ver modelo →
           </a>
         </div>
       </div>
